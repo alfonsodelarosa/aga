@@ -1,2 +1,24 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th>Pedido</th>
+      <th>Cliente</th>
+      <th>Cantidad</th>
+      <th>Fecha_apertura</th>
+      <th>Especificaciones</th>
+      <th>Importe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @query2.each do |result| %>
+     <tr>
+       <td><%= result["Pedido"] %></td>
+       <td><%= result["Cliente"] %></td>
+       <td><%= result["Cantidad"] %></td>
+       <td><%= result["Fecha_apertura"] %></td>
+       <td><%= result["Especificaciones"] %></td>
+       <td><%= result["Importe"] %></td>
+     </tr>
+   <% end %>
+</tbody>
+</table>
