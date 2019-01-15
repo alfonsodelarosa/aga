@@ -12,5 +12,19 @@
  *
  */
 
+
 @import "bootstrap";
-@import "dashboard";
+@import "libs/css/style.scss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "charts/chartist-bundle/chartist.scss";
+@import "charts/morris-bundle/morris.scss";
+@import "charts/c3charts/c3.scss";
+
+// @import "style.scss";
+// @import "vendor/font/fontawesome/css/fontawesome-all.scss";
+// @import "assets/vendor/chartist.scss";
+// @import "vendor/morris.scss";
+// @import "vendor/materialdesignicons.min.scss";
+// @import "vendor/c3.scss";
+// @import "vendor/flag-icon.min.scss";
