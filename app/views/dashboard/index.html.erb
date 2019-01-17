@@ -1,24 +1,29 @@
-<table class="table table-striped table-sm">
-  <thead>
-    <tr>
-      <th>Pedido</th>
-      <th>Cliente</th>
-      <th>Cantidad</th>
-      <th>Fecha_apertura</th>
-      <th>Especificaciones</th>
-      <th>Importe</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @dash_board_jobs_by_client.each do |result| %>
-     <tr>
-       <td><%= result["Pedido"] %></td>
-       <td><%= result["Cliente"] %></td>
-       <td><%= result["Cantidad"] %></td>
-       <td><%= result["Fecha_apertura"] %></td>
-       <td><%= result["Especificaciones"] %></td>
-       <td><%= result["Importe"] %></td>
-     </tr>
-   <% end %>
-</tbody>
+<table class="table">
+    <thead class="bg-light">
+        <tr class="border-0">
+            <th class="border-0">Articulo</th>
+            <th class="border-0">Pliegos</th>
+            <th class="border-0">Entrada</th>
+            <th class="border-0">Albaran</th>
+            <th class="border-0">Proveedor</th>
+            <th class="border-0">Id_Entrada</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @dash_board_jobs_by_client.each do |result| %>
+        <tr>
+          <td style="font-size:12px"><%= result["Articulo"] %></td>
+          <td><%= result["Pliegos"] %></td>
+          <td><%= result["Entrada"].strftime("%Y-%m-%d") %></td>
+          <td><%= result["Albaran"] %></td>
+          <td style="font-size:12px"><%= result["Proveedor"] %></td>
+          <td><%= result["Id_Entrada"] %></td>
+          <td><span class="badge-dot badge-brand mr-1"></span>InTransit</td>
+        </tr>
+      <% end %>
+        <tr>
+            <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+        </tr>
+    </tbody>
 </table>

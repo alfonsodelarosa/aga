@@ -24,7 +24,7 @@ class Dashboard
     wo_task200 ON iss.iss_task_id = wo_task200.tk_id) INNER JOIN wo ON
     wo_task200.tk_wonum = wo.wo_number
     WHERE (((rec.time_in)>'2017-01-10' AND (rec.time_in)<'2018-01-09' AND
-    ((rec.Loc)='PEFCAGA') AND ((iss.Loc)='PEFCAGA')));"
+    ((rec.Loc)='PEFCAGA') AND ((iss.Loc)='PEFCAGA'))) LIMIT 0,10;"
     return exec_query(query)
   end
 
