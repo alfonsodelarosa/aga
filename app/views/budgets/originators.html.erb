@@ -1,0 +1,36 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+  <div class="card">
+    <h5 class="card-header">Bar Charts</h5>
+    <div class="card-body">
+        <canvas id="chartjs_bar"></canvas>
+    </div>
+  </div>
+</div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+ <div class="card">
+    <h5 class="card-header">Number the budget by Orignators</h5>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="bg-light">
+            <tr class="border-0">
+              <th class="border-0">Name</th>
+              <th class="border-0">Number Of Bugdet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @originators.each do |originator| %>
+            <tr>
+              <td><%= originator["orig_name"] %></td>
+              <td><%= originator["num"] %></td>
+            </tr>
+            <% end %>
+            <tr>
+              <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
