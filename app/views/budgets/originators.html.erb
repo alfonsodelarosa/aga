@@ -15,13 +15,17 @@
           <thead class="bg-light">
             <tr class="border-0">
               <th class="border-0">Name</th>
+              <th class="border-0">Year</th>
+              <th class="border-0">Month</th>
               <th class="border-0">Number Of Bugdet</th>
             </tr>
           </thead>
           <tbody>
             <% @originators.each do |originator| %>
             <tr>
-              <td><%= originator["orig_name"] %></td>
+              <td><%= originator["name"] %></td>
+              <td><%= originator["year"] %></td>
+              <td><%= Date::MONTHNAMES[originator["month"]] %></td>
               <td><%= originator["num"] %></td>
             </tr>
             <% end %>
@@ -34,3 +38,7 @@
     </div>
   </div>
 </div>
+<%= javascript_tag do %>
+  var months = <%= raw @months.to_json %>;
+  var data2 = <%= raw @data.to_json %>;
+<% end %>
