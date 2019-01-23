@@ -15,7 +15,7 @@ class FinancialCostsController < ApplicationController
 
       labels << subcontractor["item"]
 
-      datasets_background<<"#5969ff"
+      datasets_background<<"##{Random.new.bytes(3).unpack('H*')[0]}"
       datasets_data << subcontractor["cost"]
 
       # case cont_of_subcontractor
