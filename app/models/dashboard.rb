@@ -27,5 +27,5 @@ class Dashboard
     ((rec.Loc)='PEFCAGA') AND ((iss.Loc)='PEFCAGA'))) LIMIT 0,10;"
     return exec_query(query)
   end
-
+  
 end

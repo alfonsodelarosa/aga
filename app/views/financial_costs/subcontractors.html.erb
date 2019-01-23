@@ -1,0 +1,40 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+  <div class="card">
+    <h5 class="card-header">Polar Charts</h5>
+    <div class="card-body">
+        <canvas id="chartjs_polar"></canvas>
+    </div>
+  </div>
+</div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+ <div class="card">
+    <h5 class="card-header">Cost of Subcontractor October 2018 </h5>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="bg-light">
+            <tr class="border-0">
+              <th class="border-0">Subcontractor</th>
+              <th class="border-0">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subcontractors_costs.each do |subcontractor| %>
+            <tr>
+              <td><%= subcontractor["item"] %></td>
+              <td><%= subcontractor["cost"] %></td>
+            </tr>
+            <% end %>
+            <tr>
+              <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_tag do %>
+  var dataset = <%= raw @dataset.to_json %>;
+  var labels = <%= raw @labels.to_json %>;
+<% end %>
