@@ -2,27 +2,27 @@
   <div class="card">
     <h5 class="card-header">Polar Charts</h5>
     <div class="card-body">
-        <canvas id="chartjs_polar"></canvas>
+        <canvas id="chartjs_doughnut"></canvas>
     </div>
   </div>
 </div>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
  <div class="card">
-    <h5 class="card-header">Cost of Subcontractor October 2018 </h5>
+    <h5 class="card-header">Material Group Costs Ever</h5>
     <div class="card-body p-0">
       <div class="table-responsive">
         <table class="table">
           <thead class="bg-light">
             <tr class="border-0">
-              <th class="border-0">Subcontractor</th>
+              <th class="border-0">Material Group</th>
               <th class="border-0">Cost</th>
             </tr>
           </thead>
           <tbody>
-            <% @subcontractors_costs.each do |subcontractor| %>
+            <% @material_group_costs.each do |material_group_cost| %>
             <tr>
-              <td><%= subcontractor["item"] %></td>
-              <td><%= number_to_currency(subcontractor["cost"], :unit=>'') %> &euro;</td>
+              <td><%= material_group_cost["material_group"] %></td>
+              <td><%= number_to_currency(material_group_cost["cost"], :unit=>'') %> &euro;</td>
             </tr>
             <% end %>
             <tr>

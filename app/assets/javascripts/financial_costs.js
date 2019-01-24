@@ -26,6 +26,32 @@
                 }
                 });
             }
+          if ($('#chartjs_doughnut').length) {
+                var ctx = document.getElementById("chartjs_doughnut").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: dataset
+                    },
+                    options: {
+
+                             legend: {
+                        display: true,
+                        position: 'bottom',
+
+                        labels: {
+                            fontColor: '#71748d',
+                            fontFamily: 'Circular Std Book',
+                            fontSize: 14,
+                        }
+                    },
+
+
+                }
+
+                });
+            }
         });
 
 })(window, document, window.jQuery);

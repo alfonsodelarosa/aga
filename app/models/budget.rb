@@ -13,7 +13,7 @@ class Budget
   end
 
   def self.originators
-
+    
      query="
      SELECT orig_name AS name, YEAR(eh_date) AS year, MONTH(eh_date) AS month, COUNT(*) AS num
      FROM e4h,orig WHERE e4h.eh_orig = orig.orig_code AND eh_date > '2018-01-01' AND

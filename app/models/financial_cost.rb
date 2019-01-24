@@ -21,4 +21,12 @@ class FinancialCost
      return exec_query(query)
   end
 
+  def self.material_groups
+
+     query=" SELECT sl_analysis AS material_group,SUM((quantity*value)) AS cost FROM itm,soh
+     WHERE itm.code=soh.item GROUP BY sl_analysis "
+
+     return exec_query(query)
+  end
+
 end
