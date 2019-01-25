@@ -26,7 +26,7 @@
               <td><%= originator["name"] %></td>
               <td><%= originator["year"] %></td>
               <td><%= Date::MONTHNAMES[originator["month"]] %></td>
-              <td><%= originator["num"] %></td>
+              <td><%= originator["value"] %></td>
             </tr>
             <% end %>
             <tr>
@@ -39,6 +39,6 @@
   </div>
 </div>
 <%= javascript_tag do %>
-  var months = <%= raw @months.to_json %>;
-  var data2 = <%= raw @data.to_json %>;
+  var months = <%= raw @chartjs_stast[:months].to_json %>;
+  var datasets = <%= raw  @chartjs_stast[:datasets].to_json %>;
 <% end %>

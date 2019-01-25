@@ -14,7 +14,7 @@ class FinancialCost
 
   def self.subcontractors
 
-     query=" SELECT item,SUM(iss_value) AS cost FROM itm,iss WHERE sl_analysis='SUBCONTRAT' AND
+     query=" SELECT item AS name ,SUM(iss_value) AS value FROM itm,iss WHERE sl_analysis='SUBCONTRAT' AND
      itm.code=iss.item AND when_issued > '2018-09-01' AND when_issued<'2018-10-01'
      GROUP BY item"
 
@@ -23,7 +23,7 @@ class FinancialCost
 
   def self.material_groups
 
-     query=" SELECT sl_analysis AS material_group,SUM((quantity*value)) AS cost FROM itm,soh
+     query=" SELECT sl_analysis AS name, SUM((quantity*value)) AS value FROM itm,soh
      WHERE itm.code=soh.item GROUP BY sl_analysis "
 
      return exec_query(query)

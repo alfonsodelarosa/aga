@@ -21,8 +21,8 @@
           <tbody>
             <% @subcontractors_costs.each do |subcontractor| %>
             <tr>
-              <td><%= subcontractor["item"] %></td>
-              <td><%= number_to_currency(subcontractor["cost"], :unit=>'') %> &euro;</td>
+              <td><%= subcontractor["name"] %></td>
+              <td><%= number_to_currency(subcontractor["value"], :unit=>'') %> &euro;</td>
             </tr>
             <% end %>
             <tr>
@@ -35,6 +35,6 @@
   </div>
 </div>
 <%= javascript_tag do %>
-  var dataset = <%= raw @dataset.to_json %>;
-  var labels = <%= raw @labels.to_json %>;
+  var dataset = <%= raw @polar_stast[:dataset].to_json %>;
+  var labels = <%=  raw @polar_stast[:labels].to_json %>;
 <% end %>

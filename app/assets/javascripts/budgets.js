@@ -6,7 +6,10 @@
                 var ctx = document.getElementById("chartjs_bar").getContext('2d');
                 var myChart = new Chart(ctx, {
                     type: 'bar',
-                    data: data2,
+                    data: {
+                      labels: months,
+                      datasets: datasets
+                    },
                     options: {
                         scales: {
                             yAxes: [{

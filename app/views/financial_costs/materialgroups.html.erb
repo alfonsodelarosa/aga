@@ -21,8 +21,8 @@
           <tbody>
             <% @material_group_costs.each do |material_group_cost| %>
             <tr>
-              <td><%= material_group_cost["material_group"] %></td>
-              <td><%= number_to_currency(material_group_cost["cost"], :unit=>'') %> &euro;</td>
+              <td><%= material_group_cost["name"] %></td>
+              <td><%= number_to_currency(material_group_cost["value"], :unit=>'') %> &euro;</td>
             </tr>
             <% end %>
             <tr>
@@ -35,6 +35,6 @@
   </div>
 </div>
 <%= javascript_tag do %>
-  var dataset = <%= raw @dataset.to_json %>;
-  var labels = <%= raw @labels.to_json %>;
+var dataset = <%= raw @doughnut_stast[:dataset].to_json %>;
+var labels = <%=  raw @doughnut_stast[:labels].to_json %>;
 <% end %>
